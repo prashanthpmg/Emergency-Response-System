@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Response System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Emergency Response System</h1>
+            <div class="emergency-hotline">
+                <span>Emergency Hotline:</span>
+                <span class="phone">911</span>
+            </div>
+        </div>
+        <div class="user-actions">
+            <button onclick="handleLogout()" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="emergency-form">
+            <h2>Report Emergency</h2>
+            <form id="emergencyForm">
+                <div class="form-group">
+                    <label for="emergencyType">Emergency Type:</label>
+                    <select id="emergencyType" required>
+                        <option value="">Select Type</option>
+                        <option value="medical">Medical Emergency</option>
+                        <option value="fire">Fire Emergency</option>
+                        <option value="police">Police Emergency</option>
+                        <option value="disaster">Natural Disaster</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" required placeholder="Enter location">
+                    <button type="button" id="getLocation">Get Current Location</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" required placeholder="Describe the emergency situation"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Contact Number:</label>
+                    <input type="tel" id="contact" required placeholder="Your contact number">
+                </div>
+
+                <button type="submit" class="submit-btn">Report Emergency</button>
+            </form>
+        </section>
+
+        <section class="active-emergencies">
+            <h2>Active Emergencies</h2>
+            <div class="emergency-filters">
+                <button onclick="filterEmergencies('all')" class="filter-btn">All</button>
+                <button onclick="filterEmergencies('medical')" class="filter-btn">Medical</button>
+                <button onclick="filterEmergencies('fire')" class="filter-btn">Fire</button>
+                <button onclick="filterEmergencies('police')" class="filter-btn">Police</button>
+                <button onclick="filterEmergencies('disaster')" class="filter-btn">Natural Disaster</button>
+            </div>
+            <div class="emergency-list" id="emergencyList">
+                <!-- Emergency cases will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Response Form Modal -->
+        <div id="responseModal" class="modal">
+            <div class="modal-content">
+                <h2>Emergency Response Details</h2>
+                <form id="responseForm">
+                    <input type="hidden" id="responseEmergencyId">
+                    <div class="form-group">
+                        <label for="responderName">Responder Name:</label>
+                        <input type="text" id="responderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="responseUnit">Response Unit:</label>
+                        <select id="responseUnit" required>
+                            <option value="">Select Unit</option>
+                            <option value="medical">Medical Unit</option>
+                            <option value="fire">Fire Unit</option>
+                            <option value="police">Police Unit</option>
+                            <option value="disaster">Disaster Response Unit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="estimatedArrival">Estimated Arrival Time (minutes):</label>
+                        <input type="number" id="estimatedArrival" required min="1" max="120">
+                    </div>
+                    <div class="form-group">
+                        <label for="responseNotes">Response Notes:</label>
+                        <textarea id="responseNotes" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Submit Response</button>
+                        <button type="button" class="cancel-btn" onclick="closeResponseModal()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section class="response-dashboard">
+            <h2>Response Dashboard</h2>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3>Active Cases</h3>
+                    <span id="activeCases">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Responding Units</h3>
+                    <span id="respondingUnits">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Resolved Cases</h3>
+                    <span id="resolvedCases">0</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>For immediate assistance, please dial 911</p>
+        <p>&copy; 2024 Emergency Response System</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/emergency.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

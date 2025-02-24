@@ -1,0 +1,444 @@
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.response-details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.response-details h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.response-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.response-notes {
+    grid-column: 1 / -1;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    background-color: #dc3545;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.user-actions {
+    margin-left: 1rem;
+}
+
+.logout-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: white;
+    color: #dc3545;
+}
+
+.emergency-hotline {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.emergency-hotline .phone {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.submit-btn {
+    background-color: #dc3545;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.submit-btn:hover {
+    background-color: #c82333;
+}
+
+/* Emergency list styles */
+.emergency-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.emergency-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 1rem;
+}
+
+.emergency-card p strong {
+    color: #343a40;
+}
+
+.emergency-card p:has(strong:contains("Emergency Solution")) {
+    background-color: #e9ecef;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    border-left: 4px solid #28a745;
+}
+
+.emergency-card.high-priority {
+    border-left: 4px solid #dc3545;
+}
+
+.emergency-card.medium-priority {
+    border-left: 4px solid #ffc107;
+}
+
+.emergency-card.low-priority {
+    border-left: 4px solid #28a745;
+}
+
+/* Dashboard styles */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Emergency button styles */
+.cancel-btn {
+    background-color: #dc3545; /* Red for cancel */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+/* Emergency filters styles */
+.emergency-filters {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #e9ecef;
+    border-color: #343a40;
+}
+
+.filter-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Priority indicator styles */
+.priority-indicator {
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.priority-indicator.high {
+    background-color: #dc3545; /* Red */
+}
+
+.priority-indicator.medium {
+    background-color: #ffc107; /* Yellow */
+}
+
+.priority-indicator.low {
+    background-color: #28a745; /* Green */
+}
+
+/* Emergency actions styles */
+.emergency-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    min-width: 100px;
+}
+
+.emergency-card .response-details {
+    margin: 15px 0;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.response-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.response-btn:hover {
+    background-color: #218838;
+}
+
+/* Status styles */
+.status-pending {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.status-responding {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.status-resolved {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Login page styles */
+.login-page {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h1 {
+    color: #dc3545;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.login-form h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #343a40;
+}
+
+.login-btn {
+    background-color: #dc3545;
+    color: white;
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #c82333;
+}
+
+.error-message {
+    color: #dc3545;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.login-hint {
+    color: #6c757d;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #343a40;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .emergency-form {
+        padding: 1rem;
+    }
+}
